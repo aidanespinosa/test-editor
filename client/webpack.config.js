@@ -14,6 +14,11 @@ module.exports = () => {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
     },
+    devServer: {
+      client: {
+        overlay: false,
+      },
+    },
     output: {
       //output for bundles
       filename: "[name].bundle.js",

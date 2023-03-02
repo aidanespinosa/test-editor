@@ -1,5 +1,5 @@
 const { offlineFallback, warmStrategyCache } = require("workbox-recipes");
-const { CacheFirst } = require("workbox-strategies");
+const { CacheFirst, StaleWhileRevalidate } = require("workbox-strategies");
 const { registerRoute } = require("workbox-routing");
 const { CacheableResponsePlugin } = require("workbox-cacheable-response");
 const { ExpirationPlugin } = require("workbox-expiration");
@@ -38,8 +38,3 @@ registerRoute(
     ],
   })
 );
-offlineFallback({
-  pageFallback: "/offline.html",
-  imageFallback: "/offline-image.jpg",
-  fontsFallback: ["/offline-font.woff", "/offline-font.woff2"],
-});
